@@ -1,2 +1,2 @@
-# buxsuv
-shunchaki loyiha
+
+
