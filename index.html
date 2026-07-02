@@ -1,0 +1,22 @@
+<!DOCTYPE html><html lang="uz"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Buxoro Suv Ta'minoti GIS</title><link rel="stylesheet" href="style.css">
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+<script src="firebase-config.js"></script>
+<script>
+  // Sahifa ko'rinishini yashirib turamiz, tekshiruv tugagach ko'rsatamiz
+  document.documentElement.style.visibility = 'hidden';
+  auth.onAuthStateChanged(user => {
+    if (!user) {
+      window.location.href = 'login.html';
+    } else {
+      document.documentElement.style.visibility = 'visible';
+    }
+  });
+</script>
+</head><body><header><h1>💧 Buxoro Suv Ta'minoti GIS</h1><nav><a href="#">Bosh sahifa</a><a href="#">Xarita</a><a href="#">Statistika</a><a href="#">Aloqa</a><a href="#" id="logoutBtn" style="border:1px solid #fff;padding:6px 12px;border-radius:6px">Chiqish</a></nav></header><section class='hero'><h2>Ichimlik suvi tarmoqlarini boshqarish tizimi</h2><p>GIS asosidagi zamonaviy monitoring platformasi.</p><a class='btn' href="suv_quvurlari_xaritasi_quvur.html">🗺️ GIS xaritani ochish</a></section><section class='cards'><div><h3>🚰 Quvurlar</h3><p>Ma'lumotlarni boshqarish.</p></div><div><h3>🏢 Inshootlar</h3><p>Nasos va rezervuarlar.</p></div><div><h3>📊 Statistika</h3><p>Real vaqt ko'rsatkichlari.</p></div></section><footer>© 2026 Buxoro Suv Ta'minoti      created by bek_asad</footer><script>
+  document.getElementById('logoutBtn').addEventListener('click', function(e){
+    e.preventDefault();
+    auth.signOut().then(() => { window.location.href = 'login.html'; });
+  });
+</script>
+<script src='script.js'></script></body></html>
